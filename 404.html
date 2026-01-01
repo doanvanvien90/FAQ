@@ -16,12 +16,14 @@
       min-height: 100vh;
       background: #05060a;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      gap: 18px;
     }
 
-    /* 🔥 Blue Soul Fire BG */
+    /* 🔥 BG */
     .bg {
       position: fixed;
       inset: 0;
@@ -74,12 +76,11 @@
       color: #7fbfff;
     }
 
-    /* FAQ section */
+    /* FAQ */
     .faq-title {
       font-size: 16px;
       font-weight: 600;
       color: #9fd3ff;
-      margin-top: 4px;
     }
 
     .faq-text {
@@ -96,6 +97,39 @@
       line-height: 1.6;
     }
 
+    /* 🔽 Home bar */
+    .home-bar {
+      width: 420px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .home-btn {
+      flex: 1;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #eaf6ff;
+      font-size: 14px;
+      border-radius: 14px;
+
+      background: rgba(10, 15, 30, 0.75);
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 0 20px #0077ff55,
+        inset 0 0 10px #00aaff33;
+
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow:
+        0 0 32px #00aaffaa,
+        inset 0 0 16px #00ccff66;
+    }
+
     /* 🖱️ Glow cursor */
     body::after {
       content: "";
@@ -110,9 +144,9 @@
       top: var(--cy, 50%);
     }
 
-    /* 📱 Mobile */
     @media (max-width: 480px) {
-      .faq-card {
+      .faq-card,
+      .home-bar {
         width: 92vw;
       }
     }
@@ -123,7 +157,6 @@
   <div class="bg"></div>
 
   <div class="faq-card">
-    <!-- Header: TÊN Ở TRÊN -->
     <div class="header">
       <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=9ab849e6&x-expires=1767337200&x-signature=quD%2F2RhItvXjD6WTqtefcTdM0gI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt="avatar">
       <div>
@@ -132,7 +165,6 @@
       </div>
     </div>
 
-    <!-- FAQ Ở DƯỚI -->
     <div>
       <div class="faq-title">FAQ</div>
       <div class="faq-text">
@@ -143,6 +175,12 @@
         <div class="faq-line">5. Mọi thắc mắc vui lòng liên hệ qua mạng xã hội.</div>
       </div>
     </div>
+  </div>
+
+  <!-- 🔽 Home bar -->
+  <div class="home-bar">
+    <a class="home-btn" href="index.html">🏠 Home</a>
+    <a class="home-btn" href="software.html">💻 Software</a>
   </div>
 
   <script>
