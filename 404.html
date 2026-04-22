@@ -12,7 +12,7 @@
   scroll-behavior:smooth;
 }
 
-/* ✅ FIX SCROLL */
+/* ✅ BODY + khoảng trống dưới */
 body{
   margin:0;
   min-height:100vh;
@@ -21,10 +21,11 @@ body{
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
-  overflow-y:auto;   /* 🔥 cho scroll */
+  overflow-y:auto;
   overflow-x:hidden;
   gap:18px;
   padding-top:40px;
+  padding-bottom:120px; /* 🔥 khoảng trống dưới */
 }
 
 /* 🌊 SCROLLBAR */
@@ -46,7 +47,6 @@ body{
   background:linear-gradient(180deg,#33ddff,#3366ff);
 }
 
-/* Firefox */
 *{
   scrollbar-width:thin;
   scrollbar-color:#2a3245 #0b0f18;
