@@ -1,192 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FAQ | DevBlzAlphaK1dXD</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQ | DevBlzAlphaK1dXD</title>
 
-  <style>
-    *{
-      box-sizing:border-box;
-      font-family:"Segoe UI",system-ui,sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  font-family:"Segoe UI",system-ui,sans-serif;
+  scroll-behavior:smooth;
+}
 
-    body{
-      margin:0;
-      min-height:100vh;
-      background:#05060a;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      align-items:center;
-      overflow:hidden;
-      gap:18px;
-      padding-top:40px;
-    }
+/* ✅ FIX SCROLL */
+body{
+  margin:0;
+  min-height:100vh;
+  background:#05060a;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  overflow-y:auto;   /* 🔥 cho scroll */
+  overflow-x:hidden;
+  gap:18px;
+  padding-top:40px;
+}
 
-    /* 🔥 BG */
-    .bg{
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(circle at 20% 30%, #00aaff55, transparent 45%),
-        radial-gradient(circle at 80% 70%, #0033ff55, transparent 45%),
-        radial-gradient(circle at center, #020416, #000);
-      filter:blur(50px);
-      z-index:-1;
-    }
+/* 🌊 SCROLLBAR */
+::-webkit-scrollbar{
+  width:8px;
+}
 
-    /* 🔽 TOP BAR (FRAME RIÊNG – TRÊN CARD) */
-    .home-bar{
-      width:420px;
-      display:flex;
-      gap:14px;
-    }
+::-webkit-scrollbar-track{
+  background:#0b0f18;
+}
 
-    .home-btn{
-      flex:1;
-      padding:14px;
-      text-align:center;
-      text-decoration:none;
-      color:#eaf6ff;
-      font-size:14px;
-      border-radius:14px;
-      background:rgba(10,15,30,.75);
-      backdrop-filter:blur(10px);
-      box-shadow:
-        0 0 20px #0077ff55,
-        inset 0 0 10px #00aaff33;
-      transition:.15s ease;
-    }
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#00ccff,#0044ff);
+  border-radius:20px;
+  box-shadow:0 0 10px #00aaff88;
+}
 
-    .home-btn:hover{
-      transform:translateY(-2px) scale(1.05);
-      box-shadow:
-        0 0 32px #00aaffaa,
-        inset 0 0 16px #00ccff66;
-    }
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,#33ddff,#3366ff);
+}
 
-    /* 🃏 FAQ CARD */
-    .faq-card{
-      width:420px;
-      padding:22px;
-      border-radius:20px;
-      background:rgba(10,15,30,.88);
-      backdrop-filter:blur(14px);
-      box-shadow:
-        0 0 45px #0088ff66,
-        0 0 100px #0022ff33;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-    }
+/* Firefox */
+*{
+  scrollbar-width:thin;
+  scrollbar-color:#2a3245 #0b0f18;
+}
 
-    /* Header */
-    .header{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
+/* 🔥 BG */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, #00aaff55, transparent 45%),
+    radial-gradient(circle at 80% 70%, #0033ff55, transparent 45%),
+    radial-gradient(circle at center, #020416, #000);
+  filter:blur(50px);
+  z-index:-1;
+}
 
-    .header img{
-      width:58px;
-      height:58px;
-      border-radius:16px;
-      box-shadow:0 0 22px #00aaffaa;
-    }
+/* TOP BAR */
+.home-bar{
+  width:420px;
+  display:flex;
+  gap:14px;
+}
 
-    .header h2{
-      margin:0;
-      font-size:20px;
-      color:#eaf6ff;
-    }
+.home-btn{
+  flex:1;
+  padding:14px;
+  text-align:center;
+  text-decoration:none;
+  color:#eaf6ff;
+  font-size:14px;
+  border-radius:14px;
+  background:rgba(10,15,30,.75);
+  backdrop-filter:blur(10px);
+  box-shadow:
+    0 0 20px #0077ff55,
+    inset 0 0 10px #00aaff33;
+  transition:.15s ease;
+}
 
-    .header p{
-      margin:0;
-      font-size:13px;
-      color:#7fbfff;
-    }
+.home-btn:hover{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:
+    0 0 32px #00aaffaa,
+    inset 0 0 16px #00ccff66;
+}
 
-    /* FAQ */
-    .faq-title{
-      font-size:16px;
-      font-weight:600;
-      color:#9fd3ff;
-    }
+/* CARD */
+.faq-card{
+  width:420px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(10,15,30,.88);
+  backdrop-filter:blur(14px);
+  box-shadow:
+    0 0 45px #0088ff66,
+    0 0 100px #0022ff33;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
 
-    .faq-text{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      padding-top:10px;
-      border-top:1px solid #00aaff33;
-    }
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
-    .faq-line{
-      font-size:14px;
-      color:#d9ecff;
-      line-height:1.6;
-    }
+.header img{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  box-shadow:0 0 22px #00aaffaa;
+}
 
-    /* 🖱 Cursor glow */
-    body::after{
-      content:"";
-      position:fixed;
-      width:120px;
-      height:120px;
-      pointer-events:none;
-      background:radial-gradient(circle,#00aaff55,transparent 70%);
-      filter:blur(22px);
-      transform:translate(-50%,-50%);
-      left:var(--cx,50%);
-      top:var(--cy,50%);
-    }
+.header h2{
+  margin:0;
+  font-size:20px;
+  color:#eaf6ff;
+}
 
-    /* 📱 Mobile */
-    @media(max-width:480px){
-      .faq-card,.home-bar{width:92vw;}
-    }
-  </style>
+.header p{
+  margin:0;
+  font-size:13px;
+  color:#7fbfff;
+}
+
+/* FAQ */
+.faq-title{
+  font-size:16px;
+  font-weight:600;
+  color:#9fd3ff;
+}
+
+.faq-text{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top:10px;
+  border-top:1px solid #00aaff33;
+}
+
+.faq-line{
+  font-size:14px;
+  color:#d9ecff;
+  line-height:1.6;
+}
+
+/* Cursor glow */
+body::after{
+  content:"";
+  position:fixed;
+  width:120px;
+  height:120px;
+  pointer-events:none;
+  background:radial-gradient(circle,#00aaff55,transparent 70%);
+  filter:blur(22px);
+  transform:translate(-50%,-50%);
+  left:var(--cx,50%);
+  top:var(--cy,50%);
+}
+
+/* Mobile */
+@media(max-width:480px){
+  .faq-card,.home-bar{width:92vw;}
+}
+</style>
 </head>
 
 <body>
-  <div class="bg"></div>
 
-  <!-- 🔽 TOP BAR -->
-  <div class="home-bar">
-    <a class="home-btn" href="https://doanvanvien90.github.io/My-first-website/">Home</a>
-    <a class="home-btn" href="https://doanvanvien90.github.io/software-pc/">Software (PC)</a>
-  </div>
+<div class="bg"></div>
 
-  <!-- FAQ CARD -->
-  <div class="faq-card">
-    <div class="header">
-      <img src="https://avatars.githubusercontent.com/doanvanvien90" alt="avatar">
-      <div>
-        <h2>DevBlzAlphaK1dXD</h2>
-        <p>Developer × Designer × Content creator</p>
-      </div>
-    </div>
+<div class="home-bar">
+  <a class="home-btn" href="https://doanvanvien90.github.io/My-first-website/">Home</a>
+  <a class="home-btn" href="https://doanvanvien90.github.io/software-pc/">Software (PC)</a>
+</div>
 
+<div class="faq-card">
+  <div class="header">
+    <img src="https://avatars.githubusercontent.com/doanvanvien90" alt="avatar">
     <div>
-      <div class="faq-title">FAQ</div>
-      <div class="faq-text">
-        <div class="faq-line">1. This website is made with GitHub, the server may be laggy sometimes.</div>
-        <div class="faq-line">2. I will do a face & a voice reveal in 2030.</div>
-        <div class="faq-line">3. My nationality: Vietnamese.</div>
-        <div class="faq-line">4. I will not be held responsible for any consequences you cause.</div>
-        <div class="faq-line">5. I'll support you if you're a member in our discord.</div>
-        <div class="faq-line">6. I'll stop using my social in otc, 2030 and switch to another account, don't worry I will give you advance notice!</div>
-        <div class="faq-line">7 My date of birth: oct/9/2015
-      </div>
+      <h2>DevBlzAlphaK1dXD</h2>
+      <p>Developer × Designer × Content creator</p>
     </div>
   </div>
 
-  <script>
-    document.addEventListener("mousemove",e=>{
-      document.body.style.setProperty("--cx",e.clientX+"px");
-      document.body.style.setProperty("--cy",e.clientY+"px");
-    });
-  </script>
+  <div>
+    <div class="faq-title">FAQ</div>
+    <div class="faq-text">
+      <div class="faq-line">1. This website is made with GitHub, the server may be laggy sometimes.</div>
+      <div class="faq-line">2. I will do a face & a voice reveal in 2030.</div>
+      <div class="faq-line">3. My nationality: Vietnamese.</div>
+      <div class="faq-line">4. I will not be held responsible for any consequences you cause.</div>
+      <div class="faq-line">5. I'll support you if you're a member in our discord.</div>
+      <div class="faq-line">6. I'll stop using my social in 2030 and switch to another account.</div>
+      <div class="faq-line">7. My date of birth: Oct/9/2015</div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("mousemove",e=>{
+  document.body.style.setProperty("--cx",e.clientX+"px");
+  document.body.style.setProperty("--cy",e.clientY+"px");
+});
+</script>
+
 </body>
 </html>
